@@ -17,6 +17,29 @@
 - **AI Quiz:** Challenge yourself with dynamically generated quizzes based on course content.
 - **AI Doubt Solver:** Get instant answers to your questions with a context-aware AI tutor available 24/7.
 
+### 🖼️ Visual Tour
+
+#### ✨ Stunning Landing Page
+![Landing Page](landing_page.png)
+
+#### 📊 Personalized Student Dashboard
+![Dashboard](dashboard.png)
+
+#### 📺 Interactive Course Player
+![Course Player](course_player.png)
+
+#### 🤖 Context-Aware AI Assistant (Notes & Quizzes)
+![AI Assistant](ai_assistant.png)
+
+#### 🧩 Features Overview
+![AI Features](features.png)
+
+### 🚀 AI Workflow: 3 Steps to Mastery
+
+1. **Watch & Learn:** Stream high-quality educational videos in our custom course player.
+2. **Generate & Review:** With one click, our AI extracts core concepts and generates structured notes for you to review.
+3. **Test & Refine:** Take an AI-generated quiz to identify knowledge gaps and use the AI Tutor to clear doubts instantly.
+
 ### 🎓 For Students
 - **Interactive Course Player:** Seamlessly watch lectures with a sleek, distraction-free interface.
 - **Progress Tracking:** Monitor your learning journey through an intuitive dashboard.
@@ -29,21 +52,26 @@
 
 ---
 
-## 🛠️ Tech Stack
+## 🛠️ Tech Stack & Architecture
 
-### Frontend
+### 🧠 AI Core
+- **Model:** Google Gemini Pro
+- **Capability:** Large context window allowing for deep understanding of long lecture transcripts.
+- **Integration:** Context-aware prompt engineering for personalized student help.
+
+### 🎨 Frontend
 - **Framework:** React 19 (Vite)
-- **Styling:** Tailwind CSS 4.0
+- **Styling:** Tailwind CSS 4.0 (for high-performance, modern UI)
+- **State Management:** React Hooks & Context API
 - **Icons:** Lucide React
 - **Notifications:** React Hot Toast
-- **PDF Export:** jsPDF & html2canvas
+- **PDF Export:** jsPDF & html2canvas (Export your AI-generated notes!)
 
-### Backend
+### ⚙️ Backend
 - **Runtime:** Node.js / Express
 - **Database:** MongoDB (Mongoose)
-- **AI Engine:** Google Gemini Pro (`@google/generative-ai`)
 - **Authentication:** JWT (JSON Web Tokens) & BcryptJS
-- **File Handling:** Multer & Cloudinary
+- **File Handling:** Multer & Cloudinary (Direct video streaming support)
 
 ---
 
