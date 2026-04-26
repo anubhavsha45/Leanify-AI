@@ -1,0 +1,38 @@
+@import "tailwindcss";
+
+@theme {
+  --color-dark-bg: #0B0E14;
+  --color-dark-card: #151A23;
+  --color-dark-border: #232A3B;
+  --color-primary: #6366f1;
+  --color-primary-hover: #4f46e5;
+  --color-accent: #8b5cf6;
+}
+
+@layer base {
+  body {
+    @apply bg-dark-bg text-gray-100 min-h-screen font-sans antialiased;
+    background: radial-gradient(circle at top right, #151A23 0%, #0B0E14 100%);
+    background-attachment: fixed;
+  }
+}
+
+/* Custom scrollbar for dark mode */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0B0E14;
+}
+::-webkit-scrollbar-thumb {
+  background: #232A3B;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #374151;
+}
+
+/* Base styles for buttons and animations */
+.glass-effect {
+  @apply bg-dark-card/60 backdrop-blur-md border border-dark-border;
+}

@@ -47,7 +47,10 @@ const userSchema = new mongoose.Schema(
       enum: ["active", "inactive"],
       default: "active",
     },
-
+    photo: {
+      type: String,
+      default: null,
+    },
     passwordChangedAt: Date,
   },
   {

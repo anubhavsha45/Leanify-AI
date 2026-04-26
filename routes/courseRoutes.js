@@ -7,6 +7,9 @@ const lectureController = require("./../controllers/lectureController");
 const upload = require("../utils/upload");
 const uploadFile = require("./../utils/uploadNotes");
 router.route("/overview").get(courseController.getOverview);
+router
+  .route("/my-courses")
+  .get(authController.protect, courseController.getMyCourses);
 
 router.use(authController.protect);
 

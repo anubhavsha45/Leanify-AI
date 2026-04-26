@@ -50,18 +50,24 @@ exports.getCourses = catchAsync(async (req, res, next) => {
 });
 
 exports.getOverview = catchAsync(async (req, res, next) => {
-  const courses = await Course.find()
-    .populate({
-      path: "createdBy",
-      select: "name email",
-    })
-    .populate({
-      path: "chapters",
-      populate: {
-        path: "lecture",
-        select: "number name",
-      },
-    });
+  const courses = await Course.find().populate({
+    path: "createdBy",
+    select: "name ",
+  });
+
+  return res.status(200).json({
+    status: "success",
+    data: {
+      courses,
+    },
+  });
+});
+
+exports.getMyCourses = catchAsync(async (req, res, next) => {
+  const courses = await Course.find({ createdBy: req.user._id }).populate({
+    path: "createdBy",
+    select: "name",
+  });
 
   return res.status(200).json({
     status: "success",

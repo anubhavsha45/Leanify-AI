@@ -41,19 +41,15 @@ exports.getEnrolls = catchAsync(async (req, res, next) => {
     user: userId,
   }).populate({
     path: "course",
-    select: "title description createdBy",
+    select: "title description createdBy chapters",
     populate: {
       path: "createdBy",
       select: "name",
     },
   });
-  if (enrollCourses.length === 0) {
-    return next(
-      new appError("There are no enrolled courses for the logged in user", 400),
-    );
-  }
   return res.status(200).json({
     status: "success",
+    results: enrollCourses.length,
     data: {
       enrollCourses,
     },

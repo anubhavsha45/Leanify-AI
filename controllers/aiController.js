@@ -256,7 +256,7 @@ exports.doubtSolver = catchAsync(async (req, res, next) => {
   }
 
   if (!lecture.description) {
-    return next(new appError("There is no description for this lecture", 400));
+    return next(new appError("This lecture has no description. AI requires context to help you. Please add a description in the dashboard.", 400));
   }
 
   if (
@@ -324,14 +324,10 @@ If you fail to follow JSON format, return:
   }));
 
   const contents = [
-    {
-      role: "model",
-      parts: [{ text: prompt }],
-    },
     ...history,
     {
       role: "user",
-      parts: [{ text: doubt }],
+      parts: [{ text: `System Instructions: ${prompt}\n\nUser Question: ${doubt}` }],
     },
   ];
 

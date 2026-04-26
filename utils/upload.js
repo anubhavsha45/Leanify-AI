@@ -19,6 +19,13 @@ const storage = new CloudinaryStorage({
       };
     }
 
+    if (file.fieldname === "photo") {
+      return {
+        folder: "users/avatars",
+        resource_type: "image",
+      };
+    }
+
     return {
       folder: "lectures/misc",
       resource_type: "auto",

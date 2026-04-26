@@ -26,6 +26,7 @@ exports.registerUser = catchAsync(async (req, res, next) => {
   const token = createToken(user._id);
 
   const sanitizedUser = {
+    _id: user._id,
     name: user.name,
     email: user.email,
     role: user.role,
@@ -61,6 +62,7 @@ exports.loginUser = catchAsync(async (req, res, next) => {
   const token = createToken(user._id);
 
   const sanitizedUser = {
+    _id: user._id,
     name: user.name,
     email: user.email,
     token,
