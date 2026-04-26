@@ -10,17 +10,21 @@ const createToken = (id) => {
 };
 
 exports.registerUser = catchAsync(async (req, res, next) => {
-  const { name, email, password, passwordConfirm } = req.body;
+  const { name, email, password, passwordConfirm, role } = req.body;
 
   if (!name || !email || !password || !passwordConfirm) {
     return next(new appError("Please provide all the details", 400));
   }
+
+  // Security: Prevent signing up as an admin
+  const safeRole = role === "admin" ? "student" : role;
 
   const user = await User.create({
     name,
     email,
     password,
     passwordConfirm,
+    role: safeRole,
   });
 
   const token = createToken(user._id);
