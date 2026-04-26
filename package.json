@@ -1,7 +1,7 @@
 {
   "name": "edtech-api",
   "version": "1.0.0",
-  "description": "API for edtech firm",
+  "description": "AI-Powered EdTech Platform with Automated Note Generation, Quizzes, and Doubt Solving.",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
